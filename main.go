@@ -9,6 +9,12 @@ import (
 )
 
 func main() {
+	kernel, err := pkg.ParseKernel()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(kernel)
+
 	if len(os.Args) != 2 {
 		log.Fatal("参数错误！")
 	}
